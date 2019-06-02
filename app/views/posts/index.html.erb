@@ -1,8 +1,11 @@
+<center>
+<div style="border: 3px solid black; width: 50%; margin: 3%;">
 <h1> Blog posts </h1>
-
-<% @posts.each do |post| %>
-    <ul>
-    <li><b> <%= post.title %></b></li>
+<div style="margin-left: -90%;">
+<% @posts.each do |post| %>  
+    <h6><b> <%= post.title %></b></h6>
     <p> <%= post.body %></p>
-    </ul>
 <% end %>
+</div>
+</div>
+</center>

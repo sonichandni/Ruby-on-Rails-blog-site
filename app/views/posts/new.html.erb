@@ -1,16 +1,28 @@
+<center>
+<div style="border: 3px solid black; width: 60%; margin: 3%;">
 <h1>Add new Post</h1>
 <%= form_for :post, url: posts_path do |f| %>
+    <% if @post.errors.any? %>
+        <% @post.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger">
+                <%= msg %>
+            </div>
+        <% end %>
+    <% end %>
+
     <p>
         <%= f.label :title %>
-        <%= f.text_field(:title, class: "form_control") %>
+        <%= f.text_field(:title, {:class => "form_control"}) %>
         
     </p>
 
     <p>
         <%= f.label :body %>
-        <%= f.text_area(:body, class: "form_control") %>
+        <%= f.text_area(:body, {:class => "form_control"}) %>
     </p>
     <p>
-        <%= f.submit %>
+        <%= f.submit({:class => 'btn btn-primary'}) %>
     </p>
 <% end %>
+</div>
+</center>
