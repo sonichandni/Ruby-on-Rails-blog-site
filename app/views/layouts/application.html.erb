@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarsExample03">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to "Home", home_path %>
+        </li>
+      </ul>  
+
+      <ul class="navbar-nav mr-auto navbar-right">
+        <li class="nav-item">
+          <%= link_to "Create Post", new_post_path %>
+        </li>
+      </ul>  
+    </div>
+  </nav>
+    <%= yield %>
+  </body>
+</html>
