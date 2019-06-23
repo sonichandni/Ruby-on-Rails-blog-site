@@ -6,3 +6,20 @@
             method: :delete,
             data: {:confirm => 'Are you sure?'},
             :class => 'btn btn-danger' %>
+
+<h3>Add Comments</h3>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+    <p>
+        <%= f.label :username %><br>
+        <%= f.text_field(:username, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+        <%= f.label :body %><br>
+        <%= f.text_field(:body, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
