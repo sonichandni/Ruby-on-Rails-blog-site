@@ -5,7 +5,7 @@
 <% @posts.each do |post| %>  
     <div class="well">
         <h6><b> <%= post.title %></b></h6>
-        <%= link_to "Read More", post_path(post), :class => 'btn btn-default' %>
+        &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Read More", post_path(post), :class => 'btn btn-default' %>
     </div>
 <% end %>
 </div>
