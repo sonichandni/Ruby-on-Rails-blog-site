@@ -1,0 +1,28 @@
+<center>
+<div style="border: 3px solid black; width: 60%; margin: 3%;">
+<h1>Edit Post</h1>
+<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+    <% if @post.errors.any? %>
+        <% @post.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger">
+                <%= msg %>
+            </div>
+        <% end %>
+    <% end %>
+
+    <p>
+        <%= f.label :title %>
+        <%= f.text_field(:title, {:class => "form_control"}) %>
+        
+    </p>
+
+    <p>
+        <%= f.label :body %>
+        <%= f.text_area(:body, {:class => "form_control"}) %>
+    </p>
+    <p>
+        <%= f.submit({:class => 'btn btn-primary'}) %>
+    </p>
+<% end %>
+</div>
+</center>
